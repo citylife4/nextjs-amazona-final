@@ -37,7 +37,6 @@ import 'swiper/swiper-bundle.css';
 import { toast, ToastContainer } from 'react-nextjs-toast';
 import MarkdownView from 'react-showdown';
 import { useRouter } from 'next/router';
-import HomeProductCard from '../../components/HomeProducts';
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 import ZoomInIcon from '@material-ui/icons/ZoomIn';
 import ZoomOutIcon from '@material-ui/icons/ZoomOut';
@@ -256,15 +255,16 @@ export default function ProductScreen({ product }) {
               defaultScale={1}
               defaultPositionX={100}
               defaultPositionY={200}
+              wheel={{ disabled: true }}
             >
               {({ zoomIn, zoomOut, ...rest }) => (
                 <>
-                  <Box margin="0.5rem">
-                    <Button variant="outlined" onClick={zoomIn}>
-                      <ZoomInIcon fontSize="large" color="action" />
+                  <Box>
+                    <Button onClick={zoomIn}>
+                      <ZoomInIcon />
                     </Button>
-                    <Button variant="outlined" onClick={zoomOut}>
-                      <ZoomOutIcon fontSize="large" color="secondary" />
+                    <Button onClick={zoomOut}>
+                      <ZoomOutIcon />
                     </Button>
                   </Box>
 
@@ -516,7 +516,7 @@ export default function ProductScreen({ product }) {
                 breakpoints={{
                   640: {
                     width: 640,
-                    slidesPerView: 2,
+                    slidesPerView: 1,
                   },
 
                   768: {
@@ -529,7 +529,7 @@ export default function ProductScreen({ product }) {
                 navigation
                 className={classes.swiper}
                 spaceBetween={10}
-                slidesPerView={2}
+                slidesPerView={1}
               >
                 {slidesRelatedProduct}
               </Swiper>

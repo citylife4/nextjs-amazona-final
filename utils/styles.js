@@ -138,7 +138,7 @@ export const useStyles = makeStyles((theme) => ({
     whiteSpace: 'noWrap',
   },
   largeImage: {
-    width: '100%',
+    width: '100% !important',
   },
   smallImage: {
     width: '160px !important',
