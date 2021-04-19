@@ -596,10 +596,10 @@ function Order({ params }) {
                   <ListItem>
                     <Grid container justify="space-between">
                       <Grid item>
-                        <Typography variant="h6">Total</Typography>
+                        <Typography variant="h3">Total</Typography>
                       </Grid>
                       <Grid item>
-                        <Typography variant="h6" align="right">
+                        <Typography variant="h3" align="right">
                           ${order.totalPrice}
                         </Typography>
                       </Grid>

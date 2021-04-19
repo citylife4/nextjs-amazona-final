@@ -5,7 +5,11 @@ export const useStyles = makeStyles((theme) => ({
     maxWidth: 800,
     margin: '0 auto',
   },
-  fullWidth: { width: '100%' },
+  brand: {
+    fontWeight: 'bold !important',
+    fontSize: '1.4rem',
+  },
+  fullWidth: { width: '100% !important' },
   strong: {
     marginRight: '0.5rem !important',
   },
@@ -137,8 +141,7 @@ export const useStyles = makeStyles((theme) => ({
     width: '100%',
   },
   smallImage: {
-    width: '160px',
-    borderRadius: '0.5rem',
+    width: '160px !important',
   },
 
   drawerContainer: {
@@ -452,7 +455,6 @@ export const useStyles = makeStyles((theme) => ({
   adminLink: {
     textDecoration: 'none',
     listStyleType: 'none',
-    fontFamily: 'Open Sans Condensed, sans-serif',
     fontSize: '18px',
     color: 'gray',
   },
@@ -508,7 +510,7 @@ export const useStyles = makeStyles((theme) => ({
   iconButton: {
     backgroundColor: '#f8c040',
     padding: 5,
-    borderRadius: '0 5px 5px 0',
+    borderRadius: '0 5px 5px 0 !important',
     '& span': {
       color: '#000000 !important',
     },

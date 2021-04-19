@@ -16,7 +16,7 @@ dotenv.config();
 const importData = async () => {
   console.log('import data');
   mongoose
-    .connect(process.env.MONGODB_URL, {
+    .connect(process.env.MONGODB_URI, {
       useCreateIndex: true,
       useNewUrlParser: true,
       useUnifiedTopology: true,
@@ -58,7 +58,7 @@ const importData = async () => {
 const destroyData = async () => {
   console.log('destory data');
   mongoose
-    .connect(process.env.MONGODB_URL, {
+    .connect(process.env.MONGODB_URI, {
       useCreateIndex: true,
       useNewUrlParser: true,
       useUnifiedTopology: true,

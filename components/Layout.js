@@ -21,26 +21,19 @@ function Layout({ children, title = 'Home', setSearchTerm, searchTerm }) {
   const theme = createMuiTheme({
     typography: {
       h1: {
-        fontSize: '1.8rem',
-        fontWeight: 400,
-        margin: '1rem 0',
-      },
-      h2: {
         fontSize: '1.6rem',
         fontWeight: 400,
         margin: '1rem 0',
       },
-      h3: {
+      h2: {
         fontSize: '1.4rem',
-        fontWeight: 600,
+        fontWeight: 400,
         margin: '1rem 0',
       },
-
-      navButton: {
-        fontFamily: 'Pacifico',
-        fontSize: '1rem',
-        textTransform: 'none',
-        color: 'white',
+      h3: {
+        fontSize: '1.2rem',
+        fontWeight: 400,
+        margin: '1rem 0',
       },
     },
     palette: {

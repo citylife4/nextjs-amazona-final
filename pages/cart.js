@@ -17,6 +17,7 @@ import {
   List,
   Grid,
   ListItem,
+  Card,
 } from '@material-ui/core';
 import { useStyles } from '../utils/styles';
 import { Alert } from '@material-ui/lab';
@@ -74,7 +75,7 @@ function Cart() {
 
   return (
     <Layout title="Shopping">
-      <Typography variant="h6" component="h6">
+      <Typography variant="h3" component="h3">
         Your Cart
       </Typography>
 
@@ -83,7 +84,7 @@ function Cart() {
           Cart is Empty. <NextLink href="/">Go shopping</NextLink>
         </Alert>
       ) : (
-        <Grid container>
+        <Grid container spacing={1}>
           <Grid item md={9} xs={12}>
             <TableContainer>
               <Table>
@@ -155,28 +156,30 @@ function Cart() {
             </TableContainer>
           </Grid>
           <Grid item md={3} xs={12}>
-            <List>
-              <ListItem>
-                <Typography variant="h6">
-                  Subtotal ( {cartItems.reduce((a, c) => a + c.quantity, 0)}{' '}
-                  items) : {curr}
-                  {cartItems.reduce((a, c) => a + c.price * c.quantity, 0)}
-                </Typography>
-              </ListItem>
-              <ListItem>
-                {cartItems.length > 0 && (
-                  <Button
-                    type="button"
-                    fullWidth
-                    variant="contained"
-                    color="primary"
-                    onClick={CheckoutHandler}
-                  >
-                    Check Out
-                  </Button>
-                )}
-              </ListItem>
-            </List>
+            <Card>
+              <List>
+                <ListItem>
+                  <Typography variant="h3">
+                    Subtotal ( {cartItems.reduce((a, c) => a + c.quantity, 0)}{' '}
+                    items) : {curr}
+                    {cartItems.reduce((a, c) => a + c.price * c.quantity, 0)}
+                  </Typography>
+                </ListItem>
+                <ListItem>
+                  {cartItems.length > 0 && (
+                    <Button
+                      type="button"
+                      fullWidth
+                      variant="contained"
+                      color="primary"
+                      onClick={CheckoutHandler}
+                    >
+                      Check Out
+                    </Button>
+                  )}
+                </ListItem>
+              </List>
+            </Card>
           </Grid>
         </Grid>
       )}

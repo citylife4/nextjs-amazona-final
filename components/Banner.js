@@ -9,13 +9,13 @@ export default function Banner(props) {
       caption: 'best product',
       image: '/images/banner1.jpg',
       description: 'best description',
-      link: 'https://google.com',
+      link: '/',
     },
     {
       caption: 'best product',
       image: '/images/banner2.jpg',
       description: 'best description',
-      link: 'https://google.com',
+      link: '/',
     },
   ];
   const { items } = props;

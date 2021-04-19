@@ -79,7 +79,7 @@ export default function index({
       <Banner />
       <Box component="div">
         <Typography
-          variant="h5"
+          variant="h3"
           className={classes.textHeading}
           display="block"
           gutterBottom
@@ -114,7 +114,7 @@ export default function index({
 
       <Box component="div">
         <Typography
-          variant="h5"
+          variant="h3"
           className={classes.textHeading}
           display="block"
           gutterBottom
@@ -148,7 +148,7 @@ export default function index({
 
       <Box component="div">
         <Typography
-          variant="h5"
+          variant="h3"
           className={classes.textHeading}
           display="block"
           gutterBottom

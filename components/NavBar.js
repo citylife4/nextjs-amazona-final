@@ -39,22 +39,12 @@ import DashboardIcon from '@material-ui/icons/Dashboard';
 import { signout } from '../utils/actions';
 import axios from 'axios';
 import Sidebar from './SideBar';
-import SearchBar from 'material-ui-search-bar';
 
 export default function NavBar({ darkMode, onDarkModeChanged }) {
   const classes = useStyles();
 
   const { state, dispatch } = useContext(Store);
-  const {
-    cart,
-    wish,
-    userInfo,
-    subcategoriesinit,
-    categories,
-    departments,
-  } = state;
-
-  const [activeMenu, setActiveMenu] = useState(null);
+  const { cart, wish, userInfo, departments } = state;
 
   const fecthInit = async () => {
     dispatch({ type: 'INIT_LIST_REQUEST' });
@@ -64,7 +54,7 @@ export default function NavBar({ darkMode, onDarkModeChanged }) {
     } catch (err) {
       dispatch({
         type: 'INIT_LIST_FAIL',
-        payload: err.message, // getErrorMessage(err),
+        payload: err.message,
       });
     }
   };
@@ -292,7 +282,7 @@ export default function NavBar({ darkMode, onDarkModeChanged }) {
               p={1}
               m={1}
             >
-              <Typography variant="h6">Shopping by category</Typography>
+              <Typography variant="h3">Shopping by category</Typography>
               <IconButton aria-label="close" onClick={sidebarCloseHandler}>
                 <CancelIcon />
               </IconButton>
@@ -303,7 +293,7 @@ export default function NavBar({ darkMode, onDarkModeChanged }) {
           </Drawer>
           <NextLink href="/">
             <Link href="/">
-              <Typography variant="h3">amazona</Typography>
+              <Typography className={classes.brand}>amazona</Typography>
             </Link>
           </NextLink>
           <div className={classes.grow} />

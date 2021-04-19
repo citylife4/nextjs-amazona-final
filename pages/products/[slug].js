@@ -279,46 +279,21 @@ export default function ProductScreen({ product }) {
               )}
             </TransformWrapper>
 
-            <Swiper
-              breakpoints={{
-                640: {
-                  width: 640,
-                  slidesPerView: 1,
-                },
-
-                768: {
-                  width: 768,
-                  slidesPerView: 3,
-                },
-              }}
-              id="main"
-              width="480"
-              spaceBetween={5}
-              slidesPerView={1}
-            >
-              <Grid container spacing={1}>
-                {[product.image, ...product.images].map((x) => (
-                  <Grid item key={x}>
-                    <SwiperSlide>
-                      <Card
-                        onClick={() => setImage(x)}
-                        className={classes.additionalImage}
-                      >
-                        <CardActionArea>
-                          <img
-                            src={x}
-                            alt={product.name}
-                            style={{
-                              height: '100px',
-                            }}
-                          />
-                        </CardActionArea>
-                      </Card>
-                    </SwiperSlide>
-                  </Grid>
-                ))}
-              </Grid>
-            </Swiper>
+            <Grid container spacing={1}>
+              {[product.image, ...product.images].map((x) => (
+                <Grid item key={x} md={3}>
+                  <Card onClick={() => setImage(x)}>
+                    <CardActionArea>
+                      <img
+                        src={x}
+                        alt={product.name}
+                        className={classes.smallImage}
+                      />
+                    </CardActionArea>
+                  </Card>
+                </Grid>
+              ))}
+            </Grid>
           </Grid>
 
           <Grid item md={3} xs={12}>
@@ -331,12 +306,9 @@ export default function ProductScreen({ product }) {
                   component="h3"
                 >
                   {product.name}
-                  <NextLink href="/wish">
-                    <FavoriteBorderIcon
-                      style={{ color: 'green', cursor: 'pointer' }}
-                      onClick={addToWishHandler}
-                    />
-                  </NextLink>
+                  <Button onClick={addToWishHandler}>
+                    <FavoriteBorderIcon />
+                  </Button>
                 </Typography>
               </ListItem>
 
@@ -353,7 +325,6 @@ export default function ProductScreen({ product }) {
                 )}
               </ListItem>
 
-              {/* <Typography component="h2">Description:</Typography> */}
               <ListItem>
                 <MarkdownView
                   markdown={product.description}
@@ -461,7 +432,7 @@ export default function ProductScreen({ product }) {
       <Box>
         <ToastContainer />
 
-        <Typography id="reviews" variant="h6">
+        <Typography id="reviews" variant="h3">
           Customer Reviews
         </Typography>
         <List>
@@ -482,7 +453,7 @@ export default function ProductScreen({ product }) {
           <ListItem>
             {userInfo ? (
               <form onSubmit={submitHandler}>
-                <Typography variant="h6">
+                <Typography variant="h3">
                   {reviewMode === 'CREATE'
                     ? 'Review this product'
                     : 'Update your review'}
@@ -527,7 +498,7 @@ export default function ProductScreen({ product }) {
       </Box>
       <Divider light />
       <Box>
-        <Typography component="h6" variant="h6" className={classes.pading1}>
+        <Typography component="h3" variant="h3" className={classes.pading1}>
           Compare Similar Products
         </Typography>
         {loadingRelatedProducts ? (
@@ -537,9 +508,7 @@ export default function ProductScreen({ product }) {
         ) : (
           <>
             {!relatedProducts.length && (
-              <Typography component="h7" variant="h7">
-                No Related Products Available
-              </Typography>
+              <Typography>No Related Products Available</Typography>
             )}
 
             <Box component="div">
