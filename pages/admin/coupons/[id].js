@@ -188,7 +188,7 @@ function Coupon({ params }) {
                     onChange={(e) => setDiscount(e.target.value)}
                   />
                   <Box className={classes.mt2}>
-                    <Typography variant="h7">Expiry Date</Typography>
+                    <Typography>Expiry Date</Typography>
                     <br />
                     <DayPickerInput
                       initialMonth={new Date()}

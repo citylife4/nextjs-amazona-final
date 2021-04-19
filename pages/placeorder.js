@@ -359,7 +359,7 @@ function placeorder() {
 
           <List>
             <ListItem>
-              <Typography variant="h7">Delivery Date</Typography>
+              <Typography>Delivery Date</Typography>
               <DayPickerInput
                 initialMonth={new Date()}
                 formatDate={formatDate}
@@ -381,7 +381,7 @@ function placeorder() {
             </ListItem>
 
             <ListItem>
-              <Typography variant="h7">Delivery Time</Typography>
+              <Typography>Delivery Time</Typography>
 
               <Select
                 value={deliverScheduledTime}
