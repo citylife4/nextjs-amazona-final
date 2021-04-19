@@ -1,0 +1,55 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none !important;
+}
+* {
+  box-sizing: border-box;
+}
+
+.toast-container {
+  z-index: 10000;
+}
+
+.ReactCrop {
+  max-width: 100% !important;
+  width: 600px !important;
+}
+.ReactCrop__image {
+  width: 600px !important;
+  margin: 0 auto;
+}
+
+.hidden-delete-button {
+  display: none !important;
+  position: absolute !important;
+  top: 0;
+  right: 0;
+  z-index: 1000 !important;
+}
+.image-picker-button:hover .hidden-delete-button {
+  display: block !important;
+}
+
+.textareaAutosize {
+  display: block;
+  border-radius: 0.5rem;
+  border: 0.1rem #a4a4a4 solid;
+  width: 100%;
+  margin-bottom: 3rem;
+  box-sizing: border-box;
+}
+
+.text-center {
+  text-align: center;
+}
